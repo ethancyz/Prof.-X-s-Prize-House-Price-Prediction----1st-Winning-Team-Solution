@@ -139,8 +139,16 @@ Predicted values were exponentiated (to reverse log transformation) and saved to
 
 # 🧮 Key Takeaways
 
-Feature engineering and standardization are critical for stable training.
+1. Model generalization is crucial. At the beginning of training, we were overly focused on achieving a new record low in validation error and neglected to compare the trends between training and validation losses. The best generalization typically occurs when the training loss is roughly equal to the validation loss, indicating a balanced model that neither underfits nor overfits.
 
-Deeper MLPs and regularization significantly improved model performance.
+2. Feature engineering matters a lot. It’s highly recommended to plot histograms of numerical and categorical features before feature engineering, so that transformations can be made with a clearer understanding of the data distribution. Moreover, not only independent variables but also the dependent variable can benefit from transformations — for instance, applying a log transform to a skewed target (as in this case) can stabilize training, though remember to inverse-transform predictions before reporting results.
 
-The project provides a full end-to-end workflow — from raw data to a trained neural predictor ready for competition submission.
+3. Parameter tuning can be automated. Using tools like grid search or automated hyperparameter optimization saves a lot of manual effort. Without them, tuning feels like alchemy — time-consuming and exhausting.
+
+4. Ensemble learning boosts performance. To further improve generalization, another effective strategy is inspired by the idea of Random Forest Model: ensemble learning through model averaging. By taking the best five individual models and averaging their predictions, we can achieve a more stable and accurate result. This ensemble approach significantly increases the chance of strong leaderboard performance — in fact, it was the key to our final winning solution on Kaggle.
+
+5. Hardware matters too. If the budget allows, invest in a decent GPU. Training deep models on CPU-only machines is painfully slow — I learned this the hard way since my setup doesn’t support CUDA.
+
+Thank you
+
+Collaborators: Yanze (Ethan) Liu, Jiongyang (July) Song
