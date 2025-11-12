@@ -1,11 +1,11 @@
 # Prof.-X-s-Prize-House-Price-Prediction----1st-Winning-Team-Solution
 
-🏠 House Price Prediction for Denver Dataset
+# 🏠 House Price Prediction for Denver Dataset
 
 This project builds and evaluates neural network models to predict house prices in Denver using the provided train and test datasets.
 The work is implemented in PyTorch, with systematic preprocessing, training, validation, and comparison of model architectures.
 
-📁 Dataset
+# 📁 Dataset
 
 Files: train.csv, test.csv
 
@@ -22,7 +22,7 @@ Correlation Heatmap — showing strong relationships between SALE_PRICE, LIVING_
 
 Neighborhood Distribution — analyzing property counts across neighborhoods.
 
-🧹 Data Preprocessing
+# 🧹 Data Preprocessing
 
 Steps performed before model training:
 
@@ -46,7 +46,7 @@ Encoding Categorical Variables
 
 Applied one-hot encoding for NBHD, PROP_CLASS, and STYLE_CN.
 
-🔀 Data Splitting and Conversion
+# 🔀 Data Splitting and Conversion
 
 Split the preprocessed data into training and validation sets using train_test_split.
 
@@ -109,7 +109,7 @@ Dropout applied after each fully connected layer with a probability of 0.2–0.3
 
 Improved generalization performance as shown by smaller training-validation error gaps.
 
-📊 Training and Evaluation
+# 📊 Training and Evaluation
 
 Models trained for 200–400 epochs, depending on complexity.
 
@@ -121,7 +121,7 @@ Training vs Validation MER curves over epochs.
 
 Clear convergence trends shown in plots.
 
-💾 Model Saving and Inference
+# 💾 Model Saving and Inference
 
 After training:
 
@@ -137,7 +137,7 @@ with torch.no_grad():
 
 Predicted values were exponentiated (to reverse log transformation) and saved to submission.csv for Kaggle evaluation.
 
-🧮 Key Takeaways
+# 🧮 Key Takeaways
 
 Feature engineering and standardization are critical for stable training.
 
