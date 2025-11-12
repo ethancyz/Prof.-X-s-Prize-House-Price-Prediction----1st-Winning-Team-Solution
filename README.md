@@ -157,7 +157,7 @@ submission.to_csv("submission.csv", index=False)
 
 5. **Ensemble Learning Boosts Accuracy**  
    To further improve generalization, another effective strategy is inspired by the idea of Random Forest Model: ensemble learning through model averaging.
-   By taking the best five individual models and averaging their predictions, we can achieve a more stable and accurate result.
+   By taking the best five individual MLP models with different parameters and averaging their predictions, we can achieve a more stable and accurate result.
    This ensemble approach significantly increases the chance of strong leaderboard performance — in fact, it was the key to our final winning solution on Kaggle.
 
 7. **Hardware Matters**  
