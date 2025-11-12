@@ -144,21 +144,26 @@ submission.to_csv("submission.csv", index=False)
 ## 🧮 Key Takeaways
 
 1. **Model Generalization Matters**  
-   Early in training, we chased lower validation losses without tracking the relationship between training and validation trends.  
-   The best generalization occurs when both losses converge — signaling a balanced model that neither underfits nor overfits.
+   At the beginning of training, we were overly focused on achieving a new record low in validation error and neglected to compare the trends between training and validation losses.
+   The best generalization typically occurs when the training loss is roughly equal to the validation loss, indicating a balanced model that neither underfits nor overfits.
 
 2. **Feature Engineering Is Critical**  
-   Plot feature histograms before transformation to understand distributions.  
-   Apply transformations (e.g., log scaling) not only to features but also to the target variable to stabilize learning.
+   It’s highly recommended to plot histograms of numerical and categorical features before feature engineering, so that transformations can be made with a clearer understanding of the data distribution.
+   Moreover, not only independent variables but also the dependent variable can benefit from transformations — for instance, applying a log transform to a skewed target (as in this case) can stabilize training,
+   though remember to inverse-transform predictions before reporting results.
 
 3. **Automate Hyperparameter Tuning**  
-   Tools like grid search or Bayesian optimization dramatically reduce manual trial-and-error, turning “alchemy” into science.
+   Using tools like grid search or automated hyperparameter optimization saves a lot of manual effort. Without them, tuning feels like alchemy — time-consuming and exhausting.
 
-4. **Ensemble Learning Boosts Accuracy**  
-   Averaging predictions from the **five best models** (similar to Random Forest ensembling) improves stability and leaderboard performance — this ensemble technique was key to our winning solution.
+5. **Ensemble Learning Boosts Accuracy**  
+   To further improve generalization, another effective strategy is inspired by the idea of Random Forest Model: ensemble learning through model averaging.
+   By taking the best five individual models and averaging their predictions, we can achieve a more stable and accurate result.
+   This ensemble approach significantly increases the chance of strong leaderboard performance — in fact, it was the key to our final winning solution on Kaggle.
 
-5. **Hardware Matters**  
-   Training deep models on CPU-only systems is painfully slow. Investing in a GPU setup is worth it — learned the hard way.
+7. **Hardware Matters**  
+   If the budget allows, invest in a decent GPU. Training deep models on CPU-only machines is painfully slow — I learned this the hard way since my setup doesn’t support CUDA.
+
+   
 
 ---
 
