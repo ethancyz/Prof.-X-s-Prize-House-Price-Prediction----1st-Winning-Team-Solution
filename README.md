@@ -1,4 +1,4 @@
-# 🧠 Prof.-X’s Prize: House Price Prediction (🥇 1st Winning Team – 92.6% Accuracy)
+# 🧠 Prof.-X’s Prize: House Price Prediction (🥇 1st Winning Team)
 
 ## 🏠 Overview
 
